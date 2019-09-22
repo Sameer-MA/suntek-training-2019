@@ -1,0 +1,108 @@
+1)//C program for fibonacci series
+ #include<stdio.h>    
+int main()    
+{    
+ int a=0,b=1,t,i,n;    
+ printf("Enter the number of elements:");    
+ scanf("%d",&n); 
+if(n>=2)   
+{
+ printf("\n%d %d",a,b);
+ for(i=2;i<number;++i)
+ {    
+  t=a+b;    
+  printf(" %d",t);    
+  a=b;    
+  b=t;    
+ } 
+}
+else if(n==1)
+      printf("0"); 
+else printf("Invalid input"); 
+  return 0;  
+ }    
+--------------------------------------------------------------------------------------------
+2)
+//c program for factorial of a number
+
+#include <stdio.h>
+ 
+int main()
+{
+  int c, n, fact = 1; 
+ printf("Enter a number to calculate its factorial\n");
+ scanf("%d", &n);
+if (n==0)
+{
+printf("Factorial of %d = 1\n", n");
+return 0;
+}
+ for (c = 1; c <= n; c++)
+    fact = fact * c;
+  printf("Factorial of %d = %d\n", n, fact);
+  return 0;
+}
+
+------------------------------------------------------------------------------------------------
+3)
+//c program for power(x,n)
+#include <stdio.h>
+int power(int n1, int n2);
+int main()
+{
+    int base,exp,result;
+    printf("Enter base number: ");
+    scanf("%d",&base);
+    printf("Enter power number(positive integer): ");
+    scanf("%d",&exp);
+    result = power(base,exp);
+    printf("%d^%d = %d",base,exp,result);
+    return 0;
+}
+int power(int base, int exp)
+{
+    if (exp != 0)
+    return (base*power(base,exp-1));
+    else return 1;
+}
+
+-------------------------------------------------------------------------------------------------
+4)
+// c program for prime or not
+#include <stdio.h>
+int primeno(int, int);
+int main()
+{
+    int num, check;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    check = primeno(num,num/2);
+    if (check == 1)
+    {
+        printf("%d is a prime number\n",num);
+    }
+    else
+    {
+        printf("%d is not a prime number\n",num);
+    }
+    return 0;
+}
+ 
+int primeno(int num,int i)
+{
+    if (i == 1)
+    {
+        return 1;
+    }
+    else
+    {
+       if (num % i == 0)
+       {
+         return 0;
+       }
+       else
+       {
+         return primeno(num, i - 1);
+       }       
+    }
+}
