@@ -66,6 +66,27 @@ int power(int base, int exp)
     else return 1;
 }
 
+
+//c program for power(x,n) using iterative approach
+#include <stdio.h>
+
+int main()
+{
+    int base,exponent;
+    long int power =1;
+    int i;
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+    for(i=1;i<=exponent;i++)
+    {
+        power=power*base;
+    }
+    printf("%d ^ %d = %lld",base,exponent,power);
+    return 0;
+}
+
 -------------------------------------------------------------------------------------------------
 4)
 // c program for prime or not
@@ -106,3 +127,34 @@ int primeno(int num,int i)
        }       
     }
 }
+
+//prime number program using iterative approach
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int n,i,flag=0;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    for(i=2;i<=sqrt(n);i++)
+    {
+        if(n%i == 0)
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (n==1) 
+    {
+      printf("1 is neither a prime nor a composite number.");
+    }
+    else 
+    {
+        if(flag==0)
+          printf("%d is a prime number.", n);
+        else
+          printf("%d is not a prime number.", n);
+    }
+    return 0;
+}
+
